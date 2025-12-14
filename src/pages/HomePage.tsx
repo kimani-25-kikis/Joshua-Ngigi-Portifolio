@@ -280,12 +280,12 @@ const HomePage = () => {
               </motion.div>
             </Link>
             <a
-              href="/Joshua-Kimani-CV.pdf"
+              href="/Joshua-Ngigi-Resume.pdf"
               download
               className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-navy-700 border-2 border-navy-200 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:border-orange-300 flex items-center justify-center gap-3"
             >
               <FaDownload />
-              <span className="text-sm sm:text-base">Download CV</span>
+              <span className="text-sm sm:text-base">Download Resume</span>
             </a>
           </motion.div>
 

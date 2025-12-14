@@ -379,13 +379,13 @@ const NavBar = () => {
               {/* CTA Button */}
               <div className="p-6">
                 <motion.a
-                  href="/Joshua-Kimani-CV.pdf"
+                  href="/Joshua-Ngigi-Resume.pdf"
                   download
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="block w-full py-4 px-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-xl shadow-lg text-center hover:shadow-orange-200 transition-all duration-300"
                 >
-                  Download CV
+                  Download Resume
                 </motion.a>
               </div>
             </motion.div>
