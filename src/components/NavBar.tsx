@@ -11,7 +11,6 @@ import {
   FaUser, 
   FaCode, 
   FaEnvelope,
-  
 } from 'react-icons/fa';
 
 const NavBar = () => {
@@ -100,7 +99,7 @@ const NavBar = () => {
               </div>
               
               <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-navy-900 to-navy-700 bg-clip-text text-transparent">
+                <span className="text-2xl font-bold text-navy-900"> {/* Changed from gradient to solid navy */}
                   Dev Joshua
                 </span>
                 <motion.div
@@ -273,7 +272,7 @@ const NavBar = () => {
                       <span className="text-white font-bold text-2xl">J</span>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-navy-900">Dev Joshua</div>
+                      <div className="text-2xl font-bold text-navy-900">Dev Joshua</div> {/* Fixed color here too */}
                       <div className="text-sm text-navy-600">Full-Stack Developer</div>
                     </div>
                   </div>

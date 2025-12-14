@@ -1,11 +1,39 @@
-// Alternative: HomePage.tsx without variants (simpler)
+// HomePage.tsx with improved name rendering for mobile
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaDownload, FaArrowRight } from 'react-icons/fa';
 import { SiReact, SiNodedotjs, SiPython, SiHono } from 'react-icons/si';
 
+// Animation variants with proper TypeScript types
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.03
+    }
+  }
+};
+
+const letterVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 20, 
+    rotateY: -90 
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateY: 0,
+    transition: {
+      type: 'spring' as const, // Explicitly cast to const
+      damping: 12,
+      stiffness: 200
+    }
+  }
+};
+
 const HomePage = () => {
-  const name = 'Joshua Kimani Ngigi'.split('');
   const title = 'Full-Stack Developer | AI & Cloud Enthusiast'.split('');
 
   return (
@@ -50,23 +78,20 @@ const HomePage = () => {
             👋 HELLO, I'M
           </motion.p>
 
-          {/* Animated Name - Simplified without variants */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-            <div className="flex flex-wrap justify-center md:justify-start">
-              {name.map((letter, index) => (
+          {/* Responsive name container */}
+          <div className="mb-6">
+            {/* First name - always on one line */}
+            <motion.div
+              className="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight flex justify-center md:justify-start"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {'Joshua'.split('').map((letter, index) => (
                 <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 20, rotateY: -90 }}
-                  animate={{ opacity: 1, y: 0, rotateY: 0 }}
-                  transition={{
-                    delay: index * 0.03,
-                    type: 'spring',
-                    damping: 12,
-                    stiffness: 200,
-                  }}
-                  className={`inline-block ${
-                    letter === ' ' ? 'w-4' : ''
-                  } text-navy-900`}
+                  key={`first-${index}`}
+                  variants={letterVariants}
+                  className="inline-block text-navy-900 hover:text-orange-500 hover:scale-110 transition-transform duration-200"
                   whileHover={{
                     scale: 1.2,
                     color: '#f97316',
@@ -76,15 +101,59 @@ const HomePage = () => {
                   {letter}
                 </motion.span>
               ))}
-            </div>
-          </h1>
+            </motion.div>
+            
+            {/* Last names - on same line for desktop, stack for mobile */}
+            <motion.div
+              className="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight flex flex-col sm:flex-row justify-center md:justify-start gap-1 sm:gap-2"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {/* Kimani */}
+              <div className="flex justify-center md:justify-start">
+                {'Kimani'.split('').map((letter, index) => (
+                  <motion.span
+                    key={`kimani-${index}`}
+                    variants={letterVariants}
+                    className="inline-block text-navy-900 hover:text-orange-500 hover:scale-110 transition-transform duration-200"
+                    whileHover={{
+                      scale: 1.2,
+                      color: '#f97316',
+                      transition: { type: 'spring', stiffness: 400 },
+                    }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </div>
+              
+              {/* Ngigi */}
+              <div className="flex justify-center md:justify-start">
+                {'Ngigi'.split('').map((letter, index) => (
+                  <motion.span
+                    key={`ngigi-${index}`}
+                    variants={letterVariants}
+                    className="inline-block text-navy-900 hover:text-orange-500 hover:scale-110 transition-transform duration-200"
+                    whileHover={{
+                      scale: 1.2,
+                      color: '#f97316',
+                      transition: { type: 'spring', stiffness: 400 },
+                    }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
 
           {/* Animated Title */}
           <div className="text-2xl sm:text-3xl text-navy-700 mb-8">
             <div className="flex flex-wrap justify-center md:justify-start gap-2">
               {title.map((char, index) => (
                 <motion.span
-                  key={index}
+                  key={`title-${index}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + (index * 0.03) }}
