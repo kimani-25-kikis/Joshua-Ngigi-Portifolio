@@ -48,14 +48,14 @@ const skillCategories = [
   },
   {
     name: 'databases',
-    skills: ['MongoDB', 'MySQL', 'SQL', 'PostgreSQL']
+    skills: ['MongoDB', 'MySQL', 'SQL', 'PostgreSQL', 'MssQL']
   },
   {
     name: 'ai',
     skills: ['Machine Learning', 'TensorFlow', 'Data Structures', 'Statistics']
   },
   {
-    name: 'tools',
+    name: 'tools of development',
     skills: ['Agile Development', 'SOLID Principles', 'Domain-Driven Design', 'Testing (BDD)']
   }
 ];

@@ -80,7 +80,7 @@ const NavBar = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Animated Logo */}
+            {/* Animated Logo with Image */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -88,18 +88,24 @@ const NavBar = () => {
               className="flex items-center space-x-3 cursor-pointer group"
             >
               <div className="relative">
+                {/* Animated background ring */}
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                   className="absolute inset-0 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 rounded-full blur-sm opacity-70 group-hover:opacity-100"
                 />
-                <div className="relative w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-orange-300 transition-all duration-300">
-                  <span className="text-white font-bold text-lg">J</span>
+                {/* Image container */}
+                <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-lg group-hover:shadow-orange-300 transition-all duration-300">
+                  <img
+                    src="/Portfolio1.jpg"
+                    alt="Joshua Kimani"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-navy-900"> {/* Changed from gradient to solid navy */}
+                <span className="text-2xl font-bold text-navy-900">
                   Dev Joshua
                 </span>
                 <motion.div
@@ -264,15 +270,21 @@ const NavBar = () => {
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               className="fixed right-0 top-0 bottom-0 w-full max-w-sm bg-gradient-to-b from-white to-navy-50 shadow-2xl z-50 lg:hidden overflow-y-auto"
             >
-              {/* Header */}
+              {/* Header with Image */}
               <div className="p-6 border-b border-navy-100">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-2xl">J</span>
+                    <div className="relative">
+                      <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-white shadow-lg">
+                        <img
+                          src="/portifolio1.jpeg"
+                          alt="Joshua Kimani"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-navy-900">Dev Joshua</div> {/* Fixed color here too */}
+                      <div className="text-2xl font-bold text-navy-900">Dev Joshua</div>
                       <div className="text-sm text-navy-600">Full-Stack Developer</div>
                     </div>
                   </div>
