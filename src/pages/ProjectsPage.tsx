@@ -39,7 +39,7 @@ const ProjectsPage = () => {
     }
   ];
 
-  const categories = ["All", "Full-Stack", "AI/ML", "Frontend", "Backend"];
+ // const categories = ["All", "Full-Stack", "AI/ML", "Frontend", "Backend"];
 
   return (
     <div className="py-20 bg-gradient-to-b from-white to-navy-50">
