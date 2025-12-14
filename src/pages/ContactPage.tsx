@@ -183,7 +183,7 @@ const ContactPage = () => {
                   <span className="font-semibold">🌍</span> Open to Remote Work & Relocation
                 </p>
                 <p className="text-navy-700 flex items-center gap-2">
-                  <span className="font-semibold">⏰</span> Available: 9:00 AM - 6:00 PM EAT
+                  <span className="font-semibold">⏰</span> Available: 24/7
                 </p>
               </div>
             </motion.div>
@@ -253,7 +253,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      placeholder="John Doe"
+                      placeholder="Josh Kimani"
                       className="w-full px-4 py-3 bg-navy-50 border-2 border-navy-100 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all duration-300"
                     />
                     <div className="absolute inset-0 border-2 border-transparent group-focus-within:border-orange-300 rounded-xl pointer-events-none transition-all duration-300" />
@@ -273,7 +273,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      placeholder="john@example.com"
+                      placeholder="yours@gmail.com"
                       className="w-full px-4 py-3 bg-navy-50 border-2 border-navy-100 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all duration-300"
                     />
                     <div className="absolute inset-0 border-2 border-transparent group-focus-within:border-orange-300 rounded-xl pointer-events-none transition-all duration-300" />
