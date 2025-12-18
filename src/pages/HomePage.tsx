@@ -192,27 +192,71 @@ const HomePage = () => {
             </div>
 
             {/* Animated Title */}
-            <div className="text-xl sm:text-2xl md:text-3xl text-navy-700 mb-6 md:mb-8 px-2 sm:px-0">
-              <div className="flex flex-wrap justify-center md:justify-start gap-1 sm:gap-2">
-                {title.map((char, index) => (
-                  <motion.span
-                    key={`title-${index}`}
+<div className="text-xl sm:text-2xl md:text-3xl text-navy-700 mb-6 md:mb-8 px-2 sm:px-0">
+  {/* Desktop/Tablet View - Single Line */}
+  <div className="hidden sm:flex flex-wrap justify-center md:justify-start gap-1 sm:gap-2">
+    {title.map((char, index) => (
+      <motion.span
+        key={`title-desktop-${index}`}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 + (index * 0.03) }}
+        className={`inline-block ${
+          char === '|' ? 'mx-1 sm:mx-2' : ''
+        } ${
+          char === 'A' && title[index + 1] === 'I' 
+            ? 'text-orange-500 font-bold' 
+            : 'text-navy-700'
+        }`}
+      >
+        {char}
+      </motion.span>
+    ))}
+  </div>
+  
+                {/* Mobile View - Two Lines */}
+                <div className="sm:hidden flex flex-col items-center">
+                  {/* First Line: Full-Stack Developer | */}
+                  <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + (index * 0.03) }}
-                    className={`inline-block ${
-                      char === '|' ? 'mx-1 sm:mx-2' : ''
-                    } ${
-                      char === 'A' && title[index + 1] === 'I' 
-                        ? 'text-orange-500 font-bold' 
-                        : 'text-navy-700'
-                    }`}
+                    transition={{ delay: 0.5 }}
+                    className="flex flex-wrap justify-center gap-1 mb-1"
                   >
-                    {char}
-                  </motion.span>
-                ))}
+                    {'Full-Stack Developer |'.split('').map((char, index) => (
+                      <span
+                        key={`mobile-line1-${index}`}
+                        className={`inline-block ${
+                          char === '|' ? 'mx-1' : ''
+                        }`}
+                      >
+                        {char}
+                      </span>
+                    ))}
+                  </motion.div>
+                  
+                  {/* Second Line: AI & Cloud Enthusiast */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.7 }}
+                    className="flex flex-wrap justify-center gap-1"
+                  >
+                    {'AI & Cloud Enthusiast'.split('').map((char, index) => (
+                      <span
+                        key={`mobile-line2-${index}`}
+                        className={`inline-block ${
+                          char === 'A' && 'AI & Cloud Enthusiast'.split('')[index + 1] === 'I' 
+                            ? 'text-orange-500 font-bold' 
+                            : 'text-navy-700'
+                        }`}
+                      >
+                        {char}
+                      </span>
+                    ))}
+                  </motion.div>
+                </div>
               </div>
-            </div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -446,7 +490,7 @@ const HomePage = () => {
               <div className="flex justify-center">
                 <div
                   ref={galleryRef}
-                  className="flex overflow-x-auto space-x-8 py-8 px-4 max-w-6xl scrollbar-hide"
+                  className="flex overflow-x-auto space-x-8 py-8 px-4 max-w-6xl scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-gray-800/50 pb-10"
                   style={{ scrollBehavior: 'smooth' }}
                 >
                   {galleryImages.map((image) => (
@@ -510,7 +554,7 @@ const HomePage = () => {
               
               <div
                 ref={galleryRef}
-                className="flex overflow-x-auto space-x-6 py-6 px-2 max-w-4xl mx-auto scrollbar-hide"
+                className="flex overflow-x-auto space-x-6 py-6 px-2 max-w-4xl mx-auto scrollbar-thin scrollbar-thumb-orange-500 scrollbar-track-gray-800/50 pb-8"
                 style={{ scrollBehavior: 'smooth' }}
               >
                 {galleryImages.map((image) => (
