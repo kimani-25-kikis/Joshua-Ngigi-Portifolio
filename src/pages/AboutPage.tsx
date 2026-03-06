@@ -5,7 +5,7 @@ import { FaGraduationCap, FaBriefcase, FaCertificate, FaCalendarAlt, FaMapMarker
 const AboutPage = () => {
   const skills = {
     frontend: ["React.js", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "SASS"],
-    backend: ["Node.js", "Express.js", "Python (FastAPI)", "RESTful APIs", "Hono.js"],
+    backend: ["Node.js", "Express.js", "Python (FastAPI)", "PHP", "RESTful APIs", "Hono.js"],
     cloud: ["Google Cloud Platform", "Docker", "Kubernetes", "Git", "GitHub"],
     databases: ["MongoDB", "MySQL", "SQL", "PostgreSQL"],
     ai: ["Machine Learning", "TensorFlow", "Data Structures", "Statistics"],
@@ -36,6 +36,18 @@ const AboutPage = () => {
         "Assisted in deploying security updates across connected workstations",
         "Documented network configurations for improved system reliability"
       ]
+    },
+     {
+      title: "System Administrator(Support) Intern",
+      company: "Pulse Wave Technologies",
+      period: "01/2026 – 03/2026",
+      location: "Embu, Kenya",
+      responsibilities: [
+        "Supported the staffs in Understanding how the new system works",
+        "Communicated technical issues to the senior developers",
+        "Gave well consolidated advices to the staffs regarding the eservices system",
+        
+      ]
     }
   ];
 
@@ -49,15 +61,21 @@ const AboutPage = () => {
 
   const certifications = [
     {
+      name: "Bachelor of Science in Computer Science",
+      issuer: "University of Embu",
+      year: "2025"
+    },
+    {
       name: "Software Engineering Certificate",
       issuer: "Teach2Give",
       year: "2025"
     },
     {
-      name: "Bachelor of Science in Computer Science",
-      issuer: "University of Embu",
+      name: "C# Programming",
+      issuer: "Microsoft",
       year: "2025"
     }
+    
   ];
 
   return (
