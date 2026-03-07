@@ -1,6 +1,4 @@
-
 import { motion } from 'framer-motion';
-
 import { FaGithub, FaCode, FaBrain, FaCar, FaUtensils, FaBriefcase, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiPython, SiTensorflow, SiFastapi } from 'react-icons/si';
 
@@ -48,7 +46,6 @@ const ProjectsPage = () => {
     }
   ];
 
-  // Update ProjectCard props interface first
   interface ProjectCardProps {
     title: string;
     description: string;
@@ -60,13 +57,11 @@ const ProjectsPage = () => {
     color?: string;
   }
 
-  // Updated ProjectCard component
   const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     description,
     technologies,
     githubLink,
-
     icon,
     category,
     color = 'orange'
@@ -137,16 +132,17 @@ const ProjectsPage = () => {
             ))}
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons - FIXED with inline styles to override DaisyUI */}
           <div className="flex gap-3 mt-auto">
             <a
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 px-4 py-3 bg-navy-900 text-white font-semibold rounded-xl hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 transition-all duration-300 group hover:shadow-lg"
+              className="flex-1 inline-flex items-center justify-center gap-3 px-4 py-3 font-semibold rounded-xl hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 transition-all duration-300 group hover:shadow-lg"
+              style={{ backgroundColor: '#0f172a', color: 'white' }}
             >
-              <FaGithub className="group-hover:scale-110 transition-transform" />
-              <span>GitHub</span>
+              <FaGithub className="group-hover:scale-110 transition-transform" style={{ color: 'white' }} />
+              <span style={{ color: 'white' }}>GitHub</span>
             </a>
             
             <button
@@ -295,15 +291,25 @@ const ProjectsPage = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://github.com/kimani-25-kikis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-gradient-to-r from-navy-900 to-navy-800 text-black font-bold rounded-xl hover:from-orange-500 hover:to-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg group"
-                  >
-                    <FaGithub className="group-hover:scale-110 transition-transform" />
-                    <span>View GitHub Profile</span>
-                    <span className="group-hover:translate-x-2 transition-transform">→</span>
-                  </a>
+  href="https://github.com/kimani-25-kikis"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center gap-4 px-8 py-4 font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg group"
+  style={{ 
+    background: 'linear-gradient(to right, #0f172a, #1e293b)',
+    color: 'white'
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.background = 'linear-gradient(to right, #f97316, #ea580c)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.background = 'linear-gradient(to right, #0f172a, #1e293b)';
+  }}
+>
+  <FaGithub className="group-hover:scale-110 transition-transform" style={{ color: 'white' }} />
+  <span style={{ color: 'white' }}>View GitHub Profile</span>
+  <span className="group-hover:translate-x-2 transition-transform" style={{ color: 'white' }}>→</span>
+</a>
                   
                   <a
                     href="/contact"
