@@ -38,7 +38,7 @@ const galleryImages = [
   { id: 2, name: 'UsAll', alt: 'Team Collaboration' },
   { id: 3, name: 'Me&Gatimu', alt: 'With Gatimu' },
   { id: 4, name: 'Me&CEO', alt: 'With CEO' },
-  { id: 5, name: 'Me&Denno', alt: 'With Denno' },
+  { id: 5, name: 'Me&Denno', alt: 'With Denis' },
 ];
 
 const HomePage = () => {
@@ -405,9 +405,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Photo Gallery Section with Background Image */}
+      
       <section className="relative py-20 overflow-hidden">
-        {/* Dark Background Image with Overlay */}
+        
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ 
@@ -415,14 +415,14 @@ const HomePage = () => {
             filter: 'brightness(0.9) contrast(1.0)'
           }}
         >
-          {/* Gradient Overlay for better readability */}
+          
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
           
-          {/* Subtle Pattern Overlay */}
+          
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,_rgba(255,255,255,0.1)_1px,_transparent_0)] bg-[length:40px_40px]"></div>
         </div>
 
-        {/* Floating Particles Effect */}
+        
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(15)].map((_, i) => (
             <motion.div
@@ -446,7 +446,7 @@ const HomePage = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          {/* Section Header */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -464,7 +464,7 @@ const HomePage = () => {
               A journey through professional collaborations and memorable experiences
             </p>
             
-            {/* Decorative Line */}
+           
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: '100px' }}
@@ -474,7 +474,7 @@ const HomePage = () => {
             />
           </motion.div>
 
-          {/* Desktop Gallery - Horizontal Scroll with 3 visible images */}
+          
           <div className="hidden lg:block">
             <div className="relative">
               {/* Navigation Buttons */}
@@ -503,17 +503,17 @@ const HomePage = () => {
                       className="flex-shrink-0 w-80 h-64 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 hover:border-orange-400 transition-all duration-500 group"
                     >
                       <div className="relative w-full h-full bg-gray-900">
-                        {/* Image with proper fitting */}
+                        
                         <img
                           src={`/${image.name}.jpeg`}
                           alt={image.alt}
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                         />
                         
-                        {/* Overlay Effects */}
+                     
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         
-                        {/* Hover Info */}
+                     
                         <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/90 to-transparent">
                           <div className="flex items-center justify-between">
                             <p className="text-white font-semibold text-lg">{image.alt}</p>

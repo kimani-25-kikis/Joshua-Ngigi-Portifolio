@@ -1,4 +1,6 @@
+
 import { motion } from 'framer-motion';
+
 import { FaGithub, FaCode, FaBrain, FaCar, FaUtensils, FaBriefcase, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiPython, SiTensorflow, SiFastapi } from 'react-icons/si';
 
@@ -58,12 +60,13 @@ const ProjectsPage = () => {
     color?: string;
   }
 
-  // Updated ProjectCard component with FIXED GitHub button
+  // Updated ProjectCard component
   const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     description,
     technologies,
     githubLink,
+
     icon,
     category,
     color = 'orange'
@@ -134,20 +137,18 @@ const ProjectsPage = () => {
             ))}
           </div>
 
-          {/* Action Buttons - FIXED GITHUB BUTTON */}
+          {/* Action Buttons */}
           <div className="flex gap-3 mt-auto">
-            {/* GitHub Button - Now clearly visible with white text */}
             <a
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-3 px-4 py-3 bg-navy-900 text-white font-bold rounded-xl border border-navy-700 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:border-transparent transition-all duration-300 group hover:shadow-lg"
+              className="flex-1 inline-flex items-center justify-center gap-3 px-4 py-3 bg-navy-900 text-white font-semibold rounded-xl hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 transition-all duration-300 group hover:shadow-lg"
             >
-              <FaGithub className="group-hover:scale-110 transition-transform text-white" />
-              <span className="text-white font-bold">GitHub</span>
+              <FaGithub className="group-hover:scale-110 transition-transform" />
+              <span>GitHub</span>
             </a>
             
-            {/* Live Demo Button - UNCHANGED */}
             <button
               onClick={handleLiveDemo}
               className="flex-1 inline-flex items-center justify-center gap-3 px-4 py-3 bg-white text-navy-700 border-2 border-navy-200 font-semibold rounded-xl hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-100 hover:border-orange-300 hover:text-orange-600 transition-all duration-300 group hover:shadow-lg"
@@ -297,7 +298,7 @@ const ProjectsPage = () => {
                     href="https://github.com/kimani-25-kikis"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-gradient-to-r from-navy-900 to-navy-800 text-white font-bold rounded-xl hover:from-orange-500 hover:to-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg group"
+                    className="inline-flex items-center justify-center gap-4 px-8 py-4 bg-gradient-to-r from-navy-900 to-navy-800 text-black font-bold rounded-xl hover:from-orange-500 hover:to-orange-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg group"
                   >
                     <FaGithub className="group-hover:scale-110 transition-transform" />
                     <span>View GitHub Profile</span>
