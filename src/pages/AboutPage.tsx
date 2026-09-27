@@ -40,7 +40,7 @@ const AboutPage = () => {
      {
       title: "System Administrator(Support) Intern",
       company: "Pulse Wave Technologies",
-      period: "01/2026 – 03/2026",
+      period: "01/2026 – Present",
       location: "Embu, Kenya",
       responsibilities: [
         "Supported the staffs in Understanding how the new system works",
