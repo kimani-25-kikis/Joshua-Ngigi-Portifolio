@@ -72,8 +72,18 @@ const AboutPage = () => {
     },
     {
       name: "C# Programming",
-      issuer: "Microsoft",
+      issuer: "FreeCodeCamp  & Microsoft",
       year: "2025"
+    },
+    {
+      name: "Python Programming",
+      issuer: "FreeCodeCamp  & Microsoft",
+      year: "2026"
+    },
+    {
+      name: "JavaScript",
+      issuer: "FreeCodeCamp  & Microsoft",
+      year: "2026"
     }
     
   ];
